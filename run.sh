@@ -7,6 +7,9 @@ CONFIG=config.json
 # pull the latest code from the repo
 git pull origin master
 
+# run the virtual environment
+source env/bin/activate
+
 # generate the model configuration file
 python generate.py
 
