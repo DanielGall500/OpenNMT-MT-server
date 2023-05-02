@@ -6,7 +6,7 @@ from dotenv import dotenv_values
 
 def combine_confs(conf_list):
 	confs = {
-		"models_root": "new_model/",
+		"models_root": "app/new_model/",
 		"models": conf_list
 	}
 	return confs
@@ -81,12 +81,12 @@ def write_config_to(config,path):
 def main():
 	config = dotenv_values('.env')
 
-	db = sqlite3.connect("DB/database.sqlite")
+	db = sqlite3.connect("app/DB/database.sqlite")
 	model_df = pd.read_sql_query("SELECT * FROM models", db, index_col=None)
 
 	current_server = config['SERVER']
 	config = create_model_config(current_server, model_df)
-	write_config_to(config,"config.json")
+	write_config_to(config,"app/config.json")
 
 if __name__ == "__main__":
 	main()

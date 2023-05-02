@@ -10,10 +10,10 @@ from logging.handlers import RotatingFileHandler
 STATUS_OK = "ok"
 STATUS_ERROR = "error"
 
-CONFIG_FILE = "config.json"
+CONFIG_FILE = "app/config.json"
 URL_ROOT = "/translator"
 IP = "0.0.0.0"
-PORT = 5000
+PORT = 60000
 DEBUG = False
 
 def start(config_file,
